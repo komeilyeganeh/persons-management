@@ -1,35 +1,17 @@
 import React from "react";
 
 const Person = ({ fullname, deleted, changed }) => {
-  const divStyle = {
-    width: "300px",
-    padding: "1rem",
-    borderRadius: "10px",
-    backgroundColor: "rgb(203, 234, 228)",
-    margin: "1rem auto",
-  };
-  const inputStyle = {
-    padding: "3px 5px 3px 0",
-    outLine: "none",
-    borderRadius: "8px",
-    border: "none",
-    border: "1px solid #999",
-    margin: "0.8rem 0",
-  };
-  const btnStyle = {
-    margin: "0 0.5rem",
-    padding: "0.2rem 0.8rem",
-    cursor: "pointer",
-    border: "none",
-    backgroundColor: "rgb(143, 176, 170)",
-    color: "#fff",
-  };
   return (
-    <div style={divStyle}>
-      <p>{`${fullname}`}</p>
-      <input type="text" value={fullname} style={inputStyle} onChange={changed}/>
-      <br />
-      <button style={btnStyle} onClick={deleted}>حذف</button>
+    <div className="card bg-info text-white mb-3 mt-3 w-25 mx-auto">
+      <div className="card-body text-center">
+        <p className="d-block">{`${fullname}`}</p>
+        <div className="input-group justify-content-center">
+          <input type="text" value={fullname} className="form-control w-50" onChange={changed}/>
+          <div className="input-group-prepend">
+            <button className="btn btn-danger btn-sm fa fa-trash" onClick={deleted}/>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
